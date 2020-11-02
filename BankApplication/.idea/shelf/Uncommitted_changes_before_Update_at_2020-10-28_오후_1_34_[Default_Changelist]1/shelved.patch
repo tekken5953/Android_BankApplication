@@ -1,0 +1,62 @@
+Index: ../app/src/main/java/app/marketandroid/Retrofit/PostItem.java
+===================================================================
+--- ../app/src/main/java/app/marketandroid/Retrofit/PostItem.java	(revision c2e9acaf455089bb1166ec718be663717cf8f5e4)
++++ ../app/src/main/java/app/marketandroid/Retrofit/PostItem.java	(revision c2e9acaf455089bb1166ec718be663717cf8f5e4)
+@@ -1,26 +0,0 @@
+-package app.marketandroid.Retrofit;
+-
+-public class PostItem {
+-
+-
+-    private String weight; //NB_AddFragment 버튼 클릭 시 신청 중량(보내기)
+-    private String products_id; //NB_AddFragment 버튼 클릭 시 품종 이름(보내기)
+-     //NB_AddFragment 버튼 클릭 시 유저 아이디(핸드폰 번호)(보내기)
+-
+-    public String getWeight() { return weight;}
+-
+-    public void setWeight(String weight) {
+-        this.weight = weight;
+-    }
+-
+-    public String getProducts_id() {
+-        return products_id;
+-    }
+-
+-    public void setProducts_id(String products_id) {
+-        this.products_id = products_id;
+-    }
+-
+-
+-
+-}
+Index: ../.idea/jarRepositories.xml
+===================================================================
+--- ../.idea/jarRepositories.xml	(revision c2e9acaf455089bb1166ec718be663717cf8f5e4)
++++ ../.idea/jarRepositories.xml	(revision c2e9acaf455089bb1166ec718be663717cf8f5e4)
+@@ -1,25 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RemoteRepositoriesConfiguration">
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Maven Central repository" />
+-      <option name="url" value="https://repo1.maven.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="jboss.community" />
+-      <option name="name" value="JBoss Community repository" />
+-      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="BintrayJCenter" />
+-      <option name="name" value="BintrayJCenter" />
+-      <option name="url" value="https://jcenter.bintray.com/" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="Google" />
+-      <option name="name" value="Google" />
+-      <option name="url" value="https://dl.google.com/dl/android/maven2/" />
+-    </remote-repository>
+-  </component>
+-</project>
+\ No newline at end of file
