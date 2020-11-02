@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,15 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:overScrollMode="ifContentScrolls">
-
         <RelativeLayout
+            android:id="@+id/title_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="350dp"
+            android:background="#616aef">
             <RelativeLayout
                 android:id="@+id/main_topbar"
                 android:layout_width="match_parent"
@@ -27,7 +23,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/notification"
-                    app:tint="@color/black"
+                    app:tint="@color/white"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="15dp"/>
 
@@ -38,14 +34,14 @@
                     android:layout_marginRight="20dp"
                     android:layout_toLeftOf="@+id/main_menu"
                     android:src="@drawable/search"
-                    app:tint="@color/black" />
+                    app:tint="@color/white" />
 
                 <ImageView
                     android:id="@+id/main_menu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/menu"
-                    app:tint="@color/black"
+                    app:tint="@color/white"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="15dp"/>
 
@@ -72,24 +68,25 @@
                 <TextView
                     android:id="@+id/main_account_cash"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_below="@+id/main_account_name"
                     android:textSize="27sp"
                     android:textColor="@color/black"
                     android:layout_marginLeft="10dp"
                     android:textStyle="bold"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:text="Balanced Cash"/>
 
                 <Switch
                     android:id="@+id/main_account_switch"
                     android:layout_width="120dp"
-                    android:layout_height="60dp"
+                    android:layout_height="50dp"
                     android:layout_toRightOf="@+id/main_account_cash"
                     android:checked="true"
                     android:thumbTint="@color/main"
                     android:layout_below="@+id/main_account_name"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:trackTint="@color/main"
                     tools:ignore="UseSwitchCompatOrMaterialXml" />
 
@@ -129,86 +126,215 @@
                         android:layout_marginLeft="30dp"/>
                 </TableRow>
 
-
-
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+
+        <GridLayout
+            android:id="@+id/GridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_below="@+id/main_user_account"
+            android:background="#FFFFFF"
+            android:layout_marginTop="25dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/gray"
-                android:layout_marginTop="50dp"
-                android:layout_below="@+id/main_user_account">
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
-                <TableLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/piggy"/>
 
-                    android:layout_marginTop="50dp"
-                    android:layout_marginBottom="30dp">
-                    <TableRow
-                        android:id="@+id/tr1"
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal">
-                        <Button
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
-                            android:text="Button1"
-                            android:background="@drawable/fill_button"/>
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="저금통"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
 
-                        <Button
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
-                            android:text="Button2"
-                            android:layout_marginLeft="25dp"
-                            android:background="@drawable/fill_button"/>
-                    </TableRow>
+            </androidx.cardview.widget.CardView>
 
-                    <TableRow
-                        android:id="@+id/tr2"
-                        android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/money"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:layout_marginTop="30dp">
-                        <Button
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
-                            android:text="Button3"
-                            android:background="@drawable/fill_button"/>
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="투자"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
 
-                        <Button
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
-                            android:text="Button4"
-                            android:layout_marginLeft="25dp"
-                            android:background="@drawable/fill_button"/>
-                    </TableRow>
+            </androidx.cardview.widget.CardView>
 
-                    <TableRow
-                        android:id="@+id/tr3"
-                        android:layout_width="match_parent"
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/airplain"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:layout_marginTop="30dp">
-                        <Button
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
-                            android:text="Button5"
-                            android:background="@drawable/fill_button"/>
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="세계금융"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
 
-                        <Button
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
-                            android:text="Button6"
-                            android:layout_marginLeft="25dp"
-                            android:background="@drawable/fill_button"/>
-                    </TableRow>
-                </TableLayout>
-            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/secure"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="보안"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/coin"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="비트코인"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/paper"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:text="지표확인"
+                        android:layout_gravity="center_horizontal"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+
+            <LinearLayout
+                android:layout_below="@+id/GridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true">
+
+            </LinearLayout>
         </RelativeLayout>
 
-    </ScrollView>
-
-</RelativeLayout>
+</ScrollView>
