@@ -22,10 +22,10 @@
                     android:id="@+id/main_notification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/notification"
-                    app:tint="@color/white"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="15dp"/>
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/notification"
+                    app:tint="@color/white" />
 
                 <ImageView
                     android:id="@+id/main_search"
